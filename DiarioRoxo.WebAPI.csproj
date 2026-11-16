@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <!--
+    O projeto usa automaticamente a versão do .NET que JÁ está instalada no computador
+    (.NET 8, 9 ou 10), sem precisar instalar nada. Para conferir, rode no terminal: dotnet list-sdks (com dois tracos antes de list)
+  -->
+  <PropertyGroup>
+    <TargetFramework>net$(BundledNETCoreAppTargetFrameworkVersion)</TargetFramework>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591;NU1603</NoWarn>
+  </PropertyGroup>
+
+  <!-- Versão dos pacotes da Microsoft de acordo com o .NET instalado -->
+  <PropertyGroup Condition="'$(BundledNETCoreAppTargetFrameworkVersion)' == '8.0'">
+    <VersaoPacotesMicrosoft>8.0.*</VersaoPacotesMicrosoft>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(BundledNETCoreAppTargetFrameworkVersion)' == '9.0'">
+    <VersaoPacotesMicrosoft>9.0.*</VersaoPacotesMicrosoft>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(BundledNETCoreAppTargetFrameworkVersion)' == '10.0'">
+    <VersaoPacotesMicrosoft>10.0.14</VersaoPacotesMicrosoft>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(VersaoPacotesMicrosoft)" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="$(VersaoPacotesMicrosoft)" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(VersaoPacotesMicrosoft)" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="$(VersaoPacotesMicrosoft)">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="$(VersaoPacotesMicrosoft)">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <!-- Swashbuckle 10.3.1 funciona em .NET 8, 9 e 10 (mesma versão do Plot!) -->
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="10.3.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="10.3.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="10.3.1" />
+  </ItemGroup>
+
+  <!-- Script do banco copiado para a saída: usado pelo InicializadorBanco na primeira execução -->
+  <ItemGroup>
+    <None Include="..\Database\DiarioRoxoDB.sql" Link="Database\DiarioRoxoDB.sql" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <Target Name="VerificarVersaoDotNet" BeforeTargets="Restore;_CheckForInvalidConfigurationAndPlatform">
+    <Error Condition="'$(VersaoPacotesMicrosoft)' == ''"
+           Text="Diário Roxo!: este projeto precisa do .NET 8, 9 ou 10. Versão encontrada: $(BundledNETCoreAppTargetFrameworkVersion). Rode 'dotnet --list-sdks' para ver o que está instalado." />
+  </Target>
+
+</Project>

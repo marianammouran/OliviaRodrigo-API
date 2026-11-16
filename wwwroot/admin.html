@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel administrativo · Diário Roxo!</title>
+    <meta name="description" content="Diário Roxo! — catálogo musical da discografia da Olivia Rodrigo.">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header id="topo"></header>
+    <main class="container">
+        <div class="painel-topo">
+            <span class="mao">bastidores</span>
+            <h1>Painel administrativo</h1>
+        </div>
+
+        <div class="estatisticas">
+            <div class="estatistica papel"><div class="valor" id="totalMusicas">–</div><div class="rotulo">músicas</div></div>
+            <div class="estatistica papel"><div class="valor" id="totalAlbuns">–</div><div class="rotulo">álbuns e lançamentos</div></div>
+            <div class="estatistica papel"><div class="valor" id="totalGeneros">–</div><div class="rotulo">gêneros</div></div>
+            <div class="estatistica papel"><div class="valor" id="totalUsuarios">–</div><div class="rotulo">usuários</div></div>
+        </div>
+
+        <div class="abas-painel" role="tablist">
+            <button type="button" class="ativo" data-aba="musicas">Músicas</button>
+            <button type="button" data-aba="albuns">Álbuns</button>
+            <button type="button" data-aba="generos">Gêneros</button>
+            <button type="button" data-aba="usuarios">Usuários</button>
+        </div>
+
+        <div class="aviso erro" id="erroPainel"></div>
+        <section class="painel-conteudo papel" id="conteudoPainel"><div class="carregando"></div></section>
+    </main>
+
+    <dialog id="dialogo">
+        <form id="formDialogo" novalidate>
+            <h2 id="tituloDialogo"></h2>
+            <div class="aviso erro" id="erroDialogo"></div>
+            <div id="camposDialogo"></div>
+            <div class="acoes-dialogo">
+                <button type="button" class="botao secundario" id="cancelarDialogo">Cancelar</button>
+                <button type="submit" class="botao">Salvar</button>
+            </div>
+        </form>
+    </dialog>
+    <footer id="rodape"></footer>
+    <script src="js/api.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/validacao.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

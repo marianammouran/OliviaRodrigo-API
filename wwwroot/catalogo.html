@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo · Diário Roxo!</title>
+    <meta name="description" content="Diário Roxo! — catálogo musical da discografia da Olivia Rodrigo.">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header id="topo"></header>
+    <main class="container">
+        <div class="secao-topo" style="padding-top:2rem">
+            <div>
+                <span class="mao">todas as faixas</span>
+                <h1>Catálogo</h1>
+            </div>
+        </div>
+
+        <form class="filtros papel" id="formBusca" role="search">
+            <div class="linha-busca">
+                <label class="sr-only" for="busca">Pesquisar</label>
+                <input type="search" id="busca" placeholder="Pesquise uma música ou um álbum..." maxlength="150" autocomplete="off">
+                <button class="botao" type="submit">Pesquisar</button>
+            </div>
+            <div class="grupo-filtro">
+                <span>buscar em</span>
+                <div class="modo-busca chips" id="modoBusca">
+                    <button type="button" class="chip ativo" data-modo="busca">Título ou álbum</button>
+                    <button type="button" class="chip" data-modo="titulo">Só título</button>
+                    <button type="button" class="chip" data-modo="album">Só álbum</button>
+                </div>
+            </div>
+            <div class="grupo-filtro">
+                <span>álbum</span>
+                <div class="chips" id="filtroAlbum"></div>
+            </div>
+            <div class="grupo-filtro">
+                <span>gênero</span>
+                <div class="chips" id="filtroGenero"></div>
+            </div>
+        </form>
+
+        <div class="aviso erro" id="erroCatalogo"></div>
+        <p class="resumo-lista" id="resumo"></p>
+        <div class="grade-musicas" id="listaMusicas"><div class="carregando"></div></div>
+        <nav class="paginacao" id="paginacao" aria-label="Paginação"></nav>
+    </main>
+    <footer id="rodape"></footer>
+    <script src="js/api.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/catalogo.js"></script>
+</body>
+</html>

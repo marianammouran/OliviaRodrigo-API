@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu perfil · Diário Roxo!</title>
+    <meta name="description" content="Diário Roxo! — catálogo musical da discografia da Olivia Rodrigo.">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header id="topo"></header>
+    <main class="container">
+        <div class="secao-topo" style="padding-top:2rem">
+            <div>
+                <span class="mao">sobre mim</span>
+                <h1>Meu perfil</h1>
+            </div>
+        </div>
+        <div class="aviso erro" id="erroPerfil"></div>
+        <div class="perfil-grade">
+            <aside class="perfil-cartao papel fita lavanda" id="cartaoPerfil"><div class="carregando"></div></aside>
+
+            <section class="perfil-edicao papel">
+                <h2>Editar informações</h2>
+                <div class="aviso" id="mensagemPerfil"></div>
+                <form id="formPerfil" novalidate>
+                    <div class="grade-form">
+                        <div class="campo">
+                            <label for="nomePerfil">Nome</label>
+                            <input type="text" id="nomePerfil" maxlength="100" required>
+                            <div class="erro-campo"></div>
+                        </div>
+                        <div class="campo">
+                            <label for="emailPerfil">E-mail</label>
+                            <input type="email" id="emailPerfil" maxlength="100" required>
+                            <div class="erro-campo"></div>
+                        </div>
+                        <div class="campo">
+                            <label for="senhaPerfil">Nova senha</label>
+                            <input type="password" id="senhaPerfil" autocomplete="new-password">
+                            <div class="ajuda">Deixe em branco para manter a senha atual.</div>
+                            <div class="erro-campo"></div>
+                        </div>
+                        <div class="campo">
+                            <label for="confirmaPerfil">Confirme a nova senha</label>
+                            <input type="password" id="confirmaPerfil" autocomplete="new-password">
+                            <div class="erro-campo"></div>
+                        </div>
+                    </div>
+                    <button class="botao" type="submit">Salvar alterações</button>
+                </form>
+            </section>
+        </div>
+    </main>
+    <footer id="rodape"></footer>
+    <script src="js/api.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/validacao.js"></script>
+    <script src="js/perfil.js"></script>
+</body>
+</html>

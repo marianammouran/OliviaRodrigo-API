@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar · Diário Roxo!</title>
+    <meta name="description" content="Diário Roxo! — catálogo musical da discografia da Olivia Rodrigo.">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header id="topo"></header>
+    <main class="pagina-centro">
+        <section class="cartao-form papel fita">
+            <h1>Abra o seu diário</h1>
+            <p class="subtitulo">Entre para editar seu perfil e salvar suas preferências.</p>
+
+            <div class="abas" role="tablist">
+                <button type="button" class="ativo" data-aba="entrar" role="tab">Entrar</button>
+                <button type="button" data-aba="cadastrar" role="tab">Criar conta</button>
+            </div>
+
+            <div class="aviso" id="mensagemLogin"></div>
+
+            <form id="formEntrar" novalidate>
+                <div class="campo">
+                    <label for="emailLogin">E-mail</label>
+                    <input type="email" id="emailLogin" autocomplete="email" required>
+                    <div class="erro-campo"></div>
+                </div>
+                <div class="campo">
+                    <label for="senhaLogin">Senha</label>
+                    <input type="password" id="senhaLogin" autocomplete="current-password" required>
+                    <div class="erro-campo"></div>
+                </div>
+                <button class="botao" type="submit" style="width:100%">Entrar</button>
+            </form>
+
+            <form id="formCadastrar" novalidate hidden>
+                <div class="campo">
+                    <label for="nomeCadastro">Nome</label>
+                    <input type="text" id="nomeCadastro" autocomplete="name" maxlength="100" required>
+                    <div class="erro-campo"></div>
+                </div>
+                <div class="campo">
+                    <label for="emailCadastro">E-mail</label>
+                    <input type="email" id="emailCadastro" autocomplete="email" maxlength="100" required>
+                    <div class="erro-campo"></div>
+                </div>
+                <div class="campo">
+                    <label for="senhaCadastro">Senha</label>
+                    <input type="password" id="senhaCadastro" autocomplete="new-password" minlength="8" required>
+                    <div class="ajuda">Mínimo de 8 caracteres.</div>
+                    <div class="erro-campo"></div>
+                </div>
+                <div class="campo">
+                    <label for="confirmaCadastro">Confirme a senha</label>
+                    <input type="password" id="confirmaCadastro" autocomplete="new-password" required>
+                    <div class="erro-campo"></div>
+                </div>
+                <button class="botao rosa" type="submit" style="width:100%">Criar conta</button>
+            </form>
+        </section>
+    </main>
+    <footer id="rodape"></footer>
+    <script src="js/api.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/validacao.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

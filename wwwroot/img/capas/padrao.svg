@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="♪">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4eefb"/><stop offset="1" stop-color="#e2d4f3"/></linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#g)"/>
+  <line x1="0" y1="90" x2="600" y2="90" stroke="#e0d3f0" stroke-width="1.5"/><line x1="0" y1="132" x2="600" y2="132" stroke="#e0d3f0" stroke-width="1.5"/><line x1="0" y1="174" x2="600" y2="174" stroke="#e0d3f0" stroke-width="1.5"/><line x1="0" y1="216" x2="600" y2="216" stroke="#e0d3f0" stroke-width="1.5"/><line x1="0" y1="258" x2="600" y2="258" stroke="#e0d3f0" stroke-width="1.5"/><line x1="0" y1="300" x2="600" y2="300" stroke="#e0d3f0" stroke-width="1.5"/><line x1="0" y1="342" x2="600" y2="342" stroke="#e0d3f0" stroke-width="1.5"/><line x1="0" y1="384" x2="600" y2="384" stroke="#e0d3f0" stroke-width="1.5"/><line x1="0" y1="426" x2="600" y2="426" stroke="#e0d3f0" stroke-width="1.5"/><line x1="0" y1="468" x2="600" y2="468" stroke="#e0d3f0" stroke-width="1.5"/><line x1="0" y1="510" x2="600" y2="510" stroke="#e0d3f0" stroke-width="1.5"/><line x1="0" y1="552" x2="600" y2="552" stroke="#e0d3f0" stroke-width="1.5"/><line x1="0" y1="594" x2="600" y2="594" stroke="#e0d3f0" stroke-width="1.5"/>
+  <line x1="78" y1="0" x2="78" y2="600" stroke="#e48db4" stroke-width="3" opacity=".7"/>
+  <path transform="translate(470 160) scale(1.8)" d="M0 -8C-6 -20 -26 -15 -24 1C-22 13 0 26 0 26S22 13 24 1C26 -15 6 -20 0 -8Z" fill="#e48db4" opacity="0.8"/>
+  <rect x="240" y="-6" width="140" height="40" fill="#e48db4" opacity=".55" transform="rotate(-4 310 14)"/>
+  <text x="112" y="350" font-family="Georgia, 'Times New Roman', serif" font-size="150" font-weight="700" fill="#6b3fa0">♪</text>
+  <text x="116" y="410" font-family="'Segoe Print', 'Comic Sans MS', cursive" font-size="34" fill="#6b3fa0" opacity=".85">página em branco</text>
+  <text x="116" y="560" font-family="Georgia, serif" font-style="italic" font-size="22" fill="#6b3fa0" opacity=".6">Diário Roxo!</text>
+</svg>
